@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <td>姓名</td>
+        <td>工资</td>
+    </tr>
+    <tr>
+        <td th:text="${account.name}"></td>
+        <td th:text="${account.money}"></td>
+    </tr>
+    </table>
+</body>
+</html>

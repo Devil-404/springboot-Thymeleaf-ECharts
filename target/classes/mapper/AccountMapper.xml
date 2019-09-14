@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyd.dao.AccountMapper">
+
+    <!--<resultMap id="accountMap" type="account">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="money" column="money"/>-->
+        <!--<result property="name" column="name"/>-->
+    <!--</resultMap>-->
+
+    <insert id="add" parameterType="account">
+        insert into account (name,money) values(#{name},#{money});
+    </insert>
+
+    <update id="update">
+        update account set name=#{name},money=#{money} where id=#{id};
+    </update>
+
+    <delete id="delete">
+        delete from account where id=#{id};
+    </delete>
+
+    <select id="findAccountById" resultType="account">
+        select id,name,money from account where id=#{id};
+    </select>
+
+    <select id="findAccountAll" resultType="account">
+        select id,name,money from account;
+    </select>
+</mapper>

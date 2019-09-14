@@ -1,0 +1,43 @@
+#配置mysql连接与启动配置加速
+spring:
+  #MySql连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdb?serverTimezone=Asia/Shanghai&useSSL=true&verifyServerCertificate=false&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 123456
+  mvc:
+    servlet:
+      #启动配置加速
+      load-on-startup: 1
+    #配置静态文件(坑)
+    static-path-pattern: /static/**
+  #JPA实现增删改查
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+  thymeleaf:
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #内容类别,可不用配置
+    servlet:
+      content-type: text/html
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates
+
+
+#配置默认端口
+server:
+  port: 8083
+
+#配置MyBatis
+mybatis:
+  #Mepper.xml文件的位置
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  #配置实体类位置
+  type-aliases-package: com.zyd.pojo
