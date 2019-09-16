@@ -11,7 +11,7 @@ spring:
       #启动配置加速
       load-on-startup: 1
     #配置静态文件(坑)
-    static-path-pattern: /static/**
+    static-path-pattern: /**
   #JPA实现增删改查
   jpa:
     hibernate:
