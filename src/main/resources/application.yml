@@ -12,6 +12,8 @@ spring:
       load-on-startup: 1
     #配置静态文件(坑)
     static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
   #JPA实现增删改查
   jpa:
     hibernate:
@@ -33,7 +35,7 @@ spring:
 
 #配置默认端口
 server:
-  port: 8083
+  port: 8088
 
 #配置MyBatis
 mybatis:
